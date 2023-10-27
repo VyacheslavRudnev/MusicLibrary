@@ -21,7 +21,7 @@ namespace MusicLibrary.Pages
     /// </summary>
     public partial class AboutArtist : UserControl
     {
-        public AboutArtist(string name, string ganre, string country, string img )
+        public AboutArtist(string name, string ganre, string country, string img)
         {
             InitializeComponent();
             ArtistImage.Source = new BitmapImage(new Uri(img));
