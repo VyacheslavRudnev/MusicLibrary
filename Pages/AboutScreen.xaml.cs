@@ -9,14 +9,18 @@ namespace MusicLibrary.Pages
     /// </summary>
     public partial class AboutScreen : UserControl
     {
-        public AboutScreen(string name, string ganre, string country, string img)
+        public AboutScreen()
         {
             InitializeComponent();
-            ArtistImage.Source = new System.Windows.Media.Imaging.BitmapImage(new System.Uri(img));
-            ArtistName.Text = name;
-            ArtistGenre.Text = ganre;
-            ArtistCountry.Text = country;
         }
+        //public AboutScreen(string name, string ganre, string country, string img)
+        //{
+        //    InitializeComponent();
+        //    ArtistImage.Source = new System.Windows.Media.Imaging.BitmapImage(new System.Uri(img));
+        //    ArtistName.Text = name;
+        //    ArtistGenre.Text = ganre;
+        //    ArtistCountry.Text = country;
+        //}
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
