@@ -20,8 +20,9 @@ namespace MusicLibrary.Pages
 
         private void lottileObj_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            var artist = (sender as StackPanel).DataContext as Artist;
-            NavigatorObject.Switch(new AboutScreen(artist.Name, artist.Genre, artist.Country, artist.Img));
+            //var artist = (sender as Button).DataContext as Artist;  
+            //NavigatorObject.Switch(new AboutScreen(artist.Name, artist.Genre, artist.Country, artist.Img));
+            NavigatorObject.Switch(new HomeScreen());
         }
     }
 }

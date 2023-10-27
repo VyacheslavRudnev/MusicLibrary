@@ -21,19 +21,25 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="1" Grid.Row="0" Content="Exit" Width="100" HorizontalAlignment="Left" Margin="10" Click="Button_Click"/>
+        <Button Grid.Column="1" Grid.Row="0" Content="EXIT" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" 
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+  Style="{StaticResource MaterialDesignRaisedLightButton}"
+  ToolTip="Resource name: MaterialDesignRaisedLightButton"
+  Background="#FF8BA9B8"
+  BorderBrush="#FF8BA9B8" 
+        Click="Button_Click" />
         <StackPanel Grid.Column="2" Grid.ColumnSpan="3">
             <TextBlock Text="MUSIC LIBRARY" Foreground="Gray" FontSize="30" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,25,0" />
         </StackPanel>
         <ListView Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="10" x:Name="LVArtist">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Height="250" HorizontalAlignment="Stretch">
-                        <Image Source="{Binding Img}" Width="200" Margin="5, 0, 10, 0" />
-                        <TextBlock Text="{Binding Name}" FontSize="20" Margin="5, 0, 10, 0"/>
-                        <TextBlock Text="{Binding Genre}" FontSize="15" Margin="5, 0, 10, 0"/>
-                        <TextBlock Text="{Binding Country}" FontSize="15" Margin="5, 0, 10, 0"/>
-                        <Button Content="View Info" Width="100" Click="Button_Click_Info"/>
+                    <StackPanel Orientation="Horizontal" Height="250" HorizontalAlignment="Stretch" >
+                        <Image Source="{Binding Img}" Width="200" Height="200" Margin="5, 0, 10, 0" Stretch="UniformToFill" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                        <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Heavy" Margin="5, 25, 10, 10" HorizontalAlignment="Left" />
+                        <TextBlock Text="{Binding Genre}" FontSize="15" Margin="5, 30, 10, 0" HorizontalAlignment="Left" Padding="0,0,0,0" />
+                        <TextBlock Text="{Binding Country}" FontSize="15" Margin="5, 30, 10, 0" HorizontalAlignment="Left" />
+                        <Button Content="View Info" Width="100" Background="#FF314E5B" Click="Button_Click_Info" BorderBrush="#FF314E5B" Foreground="White" HorizontalAlignment="Right" Margin="100,0,10,0" VerticalAlignment="Center"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -22,24 +22,36 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="ArtistImage" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="30" UseLayoutRounding="True"/>
-        <TextBlock x:Name="ArtistName" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,0,25,0"/>
-        <TextBlock x:Name="ArtistGenre" Grid.Column="3" Grid.Row="1" FontSize="20" FontWeight="Thin" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,25,0"/>
-        <TextBlock x:Name="ArtistCountry" Grid.Column="3" Grid.Row="1" FontSize="20" FontWeight="Regular" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="25,0,25,0"/>
-        <Button Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,10,10" Width="100" Content="Back" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}"/>
+        <Image x:Name="ArtistBackground" Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="0" Grid.RowSpan="5" Stretch="UniformToFill" Opacity="0.5" OpacityMask="#FF8C8C8C"/>
+        <Image x:Name="ArtistImage" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="30" UseLayoutRounding="True" Stretch="UniformToFill" />
+        <TextBlock x:Name="ArtistName" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4" FontSize="38" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,25,25,10"/>
+        <TextBlock x:Name="ArtistGenre" Grid.Column="3" Grid.Row="1" FontSize="20" FontWeight="Thin" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,20,25,10"/>
+        <TextBlock x:Name="ArtistCountry" Grid.Column="3" Grid.Row="1" FontSize="20" FontWeight="Regular" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,75,25,0"/>
+
+        <Button Grid.Column="1" Grid.Row="0" Content="BACK" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" 
+IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+Style="{StaticResource MaterialDesignRaisedLightButton}"
+ToolTip="Resource name: MaterialDesignRaisedLightButton"
+Background="#FF8BA9B8" BorderBrush="#FF8BA9B8" 
+      Click="Button_Click" />
         <StackPanel Grid.Column="2" Grid.ColumnSpan="3">
             <TextBlock Text="ABOUT" FontSize="30" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,25,0"/>
         </StackPanel>
-        <StackPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" Background="Gainsboro" VerticalAlignment="Stretch">
-            <Grid Height="175">
+        <StackPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4" VerticalAlignment="Stretch" >
+            <Grid Height="175" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" Width="120" Content="Discography" Click="Button_Click_Disco" Background="Indigo" Padding="16,4,16,4" UseLayoutRounding="True" />
-                <Button Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20" Width="120" Content="History" Click="Button_Click_History" Background="Indigo" Padding="16,4,16,4" UseLayoutRounding="True" />
+                <Grid Grid.Row="1" Grid.ColumnSpan="4" Background="#FFB4CBD6" Opacity="0.5"/>
+                <Button Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Content="Discography" Click="Button_Click_Disco" Background="#FF314E5B" Padding="16,0,16,0" UseLayoutRounding="True" BorderBrush="#FF314E5B" />
+                <Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" Content="History" Click="Button_Click_History" Background="#FF314E5B" Padding="16,0,16,0" UseLayoutRounding="True" BorderBrush="#FF314E5B" />
             </Grid>
         </StackPanel>
     </Grid>

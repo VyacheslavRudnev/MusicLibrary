@@ -16,6 +16,7 @@ namespace MusicLibrary.Pages
             ArtistName.Text = name;
             ArtistGenre.Text = ganre;
             ArtistCountry.Text = country;
+            ArtistBackground.Source = new System.Windows.Media.Imaging.BitmapImage(new System.Uri(img));
         }
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
