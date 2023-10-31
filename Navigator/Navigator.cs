@@ -9,6 +9,7 @@ namespace MusicLibrary.Navigator
 {
     public class NavigatorObject
     {
+        public static UserControl oldPage;
         public static MainWindow? pageSwitcher;
 
         public static void Switch(UserControl newPage)
@@ -16,9 +17,9 @@ namespace MusicLibrary.Navigator
             pageSwitcher?.Navigate(newPage);
         }
 
-        public static void Switch(UserControl newPage, object state)
+        public static void SwitchBack()
         {
-            pageSwitcher?.Navigate(newPage, state);
+            pageSwitcher?.Navigate(oldPage);
         }
     }
 }

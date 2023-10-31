@@ -7,6 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000" Background="WhiteSmoke">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.75" SpreadMethod="Pad">
+                <GradientStop Color="#FF6A708C" Offset="1"/>
+                <GradientStop Color="#FFB2B3BA" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
@@ -44,12 +50,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
-
-
-
-
-
-
     </Grid>
 </UserControl>
